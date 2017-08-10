@@ -1,0 +1,28 @@
+{
+  "name": "blocking",
+  "version": "1.0.0",
+  "description": "Allow JavaScript synchronous coding style",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djulien/blocking.git"
+  },
+  "author": "djulien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djulien/blocking/issues"
+  },
+  "homepage": "https://github.com/djulien/blocking#readme",
+  "devDependencies": {
+    "colors": "git+https://github.com/djulien/colors.js.git"
+  },
+  "dependencies": {
+    "keypress": "^0.2.1"
+  }
+}
