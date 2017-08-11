@@ -1,14 +1,14 @@
-# blocking
-Functions to allow JavaScript synchronous coding style
+# blocking-style
+Allows synchronous coding style in JavaScript
 
 # Installation
-`npm install blocking --save`
+`npm install blocking-style --save`
 
 # Example usage
 ```javascript
-require('blocking');
+require('blocking-style');
 ...
-const {onexit, blocking, wait, prompt} = require('blocking');
+const {onexit, blocking, wait, prompt} = require('blocking-style');
 
 onexit(function()
 {

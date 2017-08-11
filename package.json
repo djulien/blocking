@@ -1,7 +1,7 @@
 {
-  "name": "blocking",
+  "name": "blocking-style",
   "version": "1.0.0",
-  "description": "Allow JavaScript synchronous coding style",
+  "description": "Allows JavaScript synchronous coding style",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djulien/blocking.git"
+    "url": "git+https://github.com/djulien/blocking-style.git"
   },
   "author": "djulien",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/djulien/blocking/issues"
+    "url": "https://github.com/djulien/blocking-style/issues"
   },
-  "homepage": "https://github.com/djulien/blocking#readme",
+  "homepage": "https://github.com/djulien/blocking-style#readme",
   "devDependencies": {
     "colors": "git+https://github.com/djulien/colors.js.git"
   },
