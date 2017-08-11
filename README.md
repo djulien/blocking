@@ -39,3 +39,6 @@ Internally the code is still asynchronous, but a generator function can be used 
 This can make the code easier to read, rather than using a bunch of callback functions.
 
 See test/test.js for an example.
+
+# License
+MIT

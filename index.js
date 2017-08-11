@@ -1,6 +1,5 @@
 //functions to allow JavaScript synchronous coding style
 //Copyright (c) 2016-2017 Don Julien
-//Can be used for non-commercial purposes
 
 'use strict'; //find bugs easier
 //require('colors'); //for console output

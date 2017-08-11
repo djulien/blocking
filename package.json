@@ -6,15 +6,18 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": "v8.2.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test/test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djulien/blocking.git"
   },
   "author": "djulien",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/djulien/blocking/issues"
   },
