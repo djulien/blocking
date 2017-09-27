@@ -23,6 +23,7 @@ blocking(function*()
 
     var response = yield prompt("Waits here until something entered ...");
     console.log("you entered '%s'", response.replace(/\n/, "\\n"));
+    yield wait(-1); //no delay
 
     for (var i = 0; i < 10; ++i)
     {

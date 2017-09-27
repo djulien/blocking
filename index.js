@@ -31,6 +31,7 @@ function blocking(gen)
 {
 	if (typeof gen == "function") //invoke generator if not already
     {
+//console.log("blocking: func -> gen");
         setImmediate(function() { blocking(gen()); }); //avoid hoist errors
         return;
     }
@@ -59,7 +60,7 @@ module.exports.wait =
 function wait(delay)
 {
     delay *= 1000; //sec -> msec
-    if (delay > 1) return setTimeout.bind(null, blocking, delay);
+    return ((delay > 1)? setTimeout: setImmediate).bind(null, blocking, delay);
 }
 
 

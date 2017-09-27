@@ -14,6 +14,7 @@ blocking(function*()
     console.log("starting @%s sec".green_lt, elapsed());
     var response = yield prompt("Enter something and hit Enter ...".cyan_lt);
     console.log("got '%s' @%s sec".cyan_lt, response.replace(/\n/, "\\n"), elapsed());
+    yield wait(-1); //no delay
 
     for (var i = 0; i < 10; ++i)
     {
