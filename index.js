@@ -39,6 +39,7 @@ function blocking(gen)
 //    var retval;
 	for (;;)
 	{
+console.log("prev retval", typeof blocking.retval, JSON.stringify(blocking.retval));
 		var status = gen.next(blocking.retval); //send previous value to generator
 //		if (!status.done && (typeof status.value == "undefined")) continue; //cooperative multi-tasking
 		if (typeof status.value == "function") //caller wants manual step
@@ -60,7 +61,7 @@ module.exports.wait =
 function wait(delay)
 {
     delay *= 1000; //sec -> msec
-    return ((delay > 1)? setTimeout: setImmediate).bind(null, blocking, delay);
+    return (delay > 0)? setTimeout.bind(null, blocking, delay): setImmediate.bind(null, blocking);
 }
 
 
