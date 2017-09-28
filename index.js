@@ -60,6 +60,7 @@ const wait =
 module.exports.wait =
 function wait(delay)
 {
+//console.log("%swait(%d sec)", (delay <= 0)? "no-": "", delay);
     delay *= 1000; //sec -> msec
     return (delay > 0)? setTimeout.bind(null, blocking, delay): setImmediate.bind(null, blocking);
 }
