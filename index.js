@@ -1,12 +1,14 @@
 //functions to allow JavaScript synchronous coding style
 //Copyright (c) 2016-2017 Don Julien
+//TODO: clean this up to allow multiple simultaneous blocking() calls
 
 'use strict'; //find bugs easier
 //require('colors'); //for console output
 const keypress = require('keypress');
 //const {caller} = require("./caller");
 //const {debug} = require('./debug');
-const util = require("util");
+//const util = require("util");
+
 
 //register callbacks when synchronous main ends:
 const onexit =
@@ -32,6 +34,8 @@ function blocking(gen)
 {
 //    process.stdin.pause(); //don't block process exit while not waiting for input
 //    var retval;
+    if (step.gen) throw "Blocking() is already active".red_lt;
+//    step.gen = gen;
 	for (;;)
 	{
         var done = step(gen);
@@ -107,8 +111,9 @@ function prompt(args)
             process.stdin.pause();
 //        process.exit();
 //        process.stdin.pause();
-            blocking.retval = text.toString(); //give entered text back to caller
-            blocking(prompt.svgen);
+            step.retval = text.toString(); //give entered text back to caller
+//            blocking(prompt.svgen);
+            step(prompt.svgen); //resume after caller's pause + yield
         });
         prompt.init = true;
     }
@@ -133,8 +138,9 @@ function getchar(args)
             process.stdin.pause();
 //        console.log('got "keypress"', key);
 //        if (key && key.ctrl && key.name == 'c') process.stdin.pause();
-            blocking.retval = (key || {}).name;
-            blocking(getchar.svgen);
+            step.retval = (key || {}).name;
+//            blocking(getchar.svgen);
+            step(getchar.svgen); //resume after caller's pause + yield
         });
         getchar.init = true;
     }

@@ -23,6 +23,7 @@ blocking(function*()
     }
     console.log("done @%s sec".green_lt, elapsed());
 });
+console.log("after blocking() @%s sec".blue_lt, elapsed());
 
 
 function elapsed()
